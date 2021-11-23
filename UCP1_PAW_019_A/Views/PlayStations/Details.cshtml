@@ -1,0 +1,24 @@
+﻿@model UCP1_PAW_019_A.Models.PlayStation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PlayStation</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JenisPlayStation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JenisPlayStation)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdPlayStation">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

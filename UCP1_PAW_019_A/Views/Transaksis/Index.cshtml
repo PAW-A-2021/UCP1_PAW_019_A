@@ -1,0 +1,53 @@
+﻿@model IEnumerable<UCP1_PAW_019_A.Models.Transaksi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Harga Sewa")
+            </th>
+            <th>
+                @Html.DisplayName("Id Penyewa")
+            </th>
+            <th>
+                @Html.DisplayName("IdPlayStation")
+            </th>
+            <th>
+                @Html.DisplayName("IdRentalNavigation")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HargaSewa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPenyewaNavigation.IdPenyewa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPlayStationNavigation.IdPlayStation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRentalNavigation.IdRental)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdTransaksi"><i class="fa fa-marker fa-lg"> </i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdTransaksi"><i class="fas fa-list"> </i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdTransaksi"><i class="fa fa-trash fa-lg"> </i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
